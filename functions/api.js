@@ -40,7 +40,7 @@ router.get("/", (req, res) => {
 router.use("/user", userRouter);
 router.use("/food", foodRouter);
 router.use("/inventory", inventoryRouter);
-router.use("/cart", verifyTokenAndRole(), cartRouter);
+router.use("/cart", cartRouter);
 
 app.use("/.netlify/functions/api", router);
 module.exports.handler = serverless(app);
